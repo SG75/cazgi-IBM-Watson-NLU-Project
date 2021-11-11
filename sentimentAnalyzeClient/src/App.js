@@ -4,7 +4,7 @@ import EmotionTable from './EmotionTable.js';
 import React from 'react';
 
 class App extends React.Component {
-    document.title = "Sentiment Analyzer"
+    
   /*
   We are setting the component as a state named innercomp.
   When this state is accessed, the HTML that is set as the 
@@ -47,8 +47,9 @@ class App extends React.Component {
     fetch(url).then((response)=>{
         response.json().then((data)=>{
         this.setState({sentimentOutput:data.label});
+        this.title="Sentiment Analyzer";
         let output = data.label;
-        let color = "white"
+        let color = "white";
         switch(output) {
           case "positive": color = "green";break;
           case "negative": color = "red";break;
